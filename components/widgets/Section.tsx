@@ -4,7 +4,7 @@ interface SectionProps {
 	className?: string;
 	id?: string;
 	crosses?: boolean;
-	crossesOffset?: boolean; // Change the type to boolean
+	crossesOffset?: string; // Change the type to boolean
 	customPaddings?: boolean;
 	children: React.ReactNode;
 }

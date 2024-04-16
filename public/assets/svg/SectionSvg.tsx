@@ -2,7 +2,7 @@ import React from 'react';
 import PlusSvg from './PlusSvg';
 
 interface SectionSvgProps {
-  crossesOffset?: boolean;
+  crossesOffset?: string;
 }
 
 const SectionSvg: React.FC<SectionSvgProps> = ({ crossesOffset }) => {
