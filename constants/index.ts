@@ -49,7 +49,7 @@ import {
     },
     {
       id: "2",
-      title: "Link",
+      title: "JOBPOST",
       url: "#how-to-use",
     },
     {
