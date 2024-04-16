@@ -1,3 +1,4 @@
+'use client'
 import { useEffect, useState } from "react";
 import { MouseParallax } from "react-just-parallax";
 
@@ -35,7 +36,11 @@ const Rings = () => {
   );
 };
 
-export const BackgroundCircles = ({ parallaxRef }) => {
+interface BackgroundCirclesProps {
+  parallaxRef: React.RefObject<HTMLElement> | null;
+}
+
+export const BackgroundCircles: React.FC<BackgroundCirclesProps> = ({ parallaxRef }) => {
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
