@@ -39,7 +39,7 @@ const Navbar = () => {
 					href={"/#"}
 					className="block w-[12rem] xl:mr-8 text-3xl font-bold"
 				>
-					FILTERATE
+					FILTRATE
 				</Link>
 
 				<nav
@@ -72,7 +72,7 @@ const Navbar = () => {
 				</Link>
 				<Link
 					href="/sign-in"
-					className="button transition-all text-n-8 hover:bg-yellow-100 rounded-md hidden lg:flex bg-yellow-300 px-7 py-3"
+					className="button transition-all text-n-8 hover:bg-[#e0ab42] rounded-md hidden lg:flex bg-[#ffcd0aff] px-7 py-3"
 				>
 					Sign In
 				</Link>

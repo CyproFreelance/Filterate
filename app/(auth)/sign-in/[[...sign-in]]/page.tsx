@@ -103,7 +103,7 @@ const AuthLayout = () => {
     <>
     <div className="flex h-screen overflow-hidden">
 
-        <section className='flex flex-1 justify-center items-center flex-col py-10 bg-[#000]'>
+        <section className='flex flex-1 justify-center items-center flex-col py-10 bg-n-9'>
           <SignupForm/>
         </section>
 

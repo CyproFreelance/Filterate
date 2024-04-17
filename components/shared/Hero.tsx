@@ -15,7 +15,6 @@ const Hero = () => {
     return (
         <Section
             className={`pt-[12rem] -mt-[5.25rem]`}
-            crosses
             crossesOffset={`lg:translate-y-[5.25rem]`}
             customPaddings
             id="hero"
@@ -42,10 +41,10 @@ const Hero = () => {
                         right
                     </p>
 					<div className="flex items-center justify-center gap-4 lg:gap-10 ">
-						<Link href={'/'} className="button bg-[#faff67] px-6 py-3 rounded-md relative inline-flex items-center justify-center h-11 transition-colors hover:text-[#000] hover:bg-[#fff] hover:border-[#faff67] text-n-8">
+						<Link href={'/'} className="button bg-[#ffcd0aff] px-6 py-3 rounded-md relative inline-flex items-center justify-center h-11 transition-colors hover:text-[#000] hover:bg-[#eebd5cff] hover:border-[#eebd5cff] text-n-8">
 							Get Started
 						</Link>
-						<Link href={'/'} className="button bg-transparent border-2 px-6 py-3 rounded-md relative inline-flex items-center justify-center h-11 transition-all hover:text-[#000] hover:bg-[#faff67] hover:border-[#faff67] text-white">
+						<Link href={'/'} className="button bg-transparent border-2 px-6 py-3 rounded-md relative inline-flex items-center justify-center h-11 transition-all hover:text-[#000] hover:bg-[#ffcd0aff] hover:border-[#ffcd0aff] text-white">
                        		Hire Editors
                     	</Link>
 					</div>
@@ -53,10 +52,10 @@ const Hero = () => {
                 </div>
 
                 <div className="relative max-w-[23rem] mx-auto md:max-w-5xl xl:mb-24">
-                    <div className="relative z-1 p-0.5 rounded-2xl bg-conic-gradient">
+                    <div className="relative z-3 p-0.5 rounded-2xl bg-conic-gradient">
                         <div className="relative bg-n-8 rounded-[1rem]">
-                            <div className="h-[1rem] bg-n-10 rounded-t-[0.9rem]" />
-                            <div className="aspect-[33/40] rounded-b-[0.9rem] overflow-hidden md:aspect-[688/490] lg:aspect-[1024/490]">
+                            {/* <div className="h-[1rem] bg-transparent rounded-t-[1rem]" /> */}
+                            <div className="aspect-[40/40] z-1 rounded-[0.9rem] overflow-hidden md:aspect-[688/490] lg:aspect-[1024/490]">
                                 <Image
                                     src={robot}
                                     alt=""
