@@ -5,8 +5,7 @@ import { HamburgerMenu } from "../design/Header";
 import MenuSvg from "@/public/assets/svg/MenuSvg";
 import { useState } from "react";
 
-
-// Task remaining : 
+// Task remaining :
 // 1) Page Scroll Disable when Navbar open
 // 2) everything else seems okay except that hamburger fix
 
@@ -14,7 +13,7 @@ const Navbar = () => {
 	const [openNavigation, setOpenNavigation] = useState(false);
 
 	const toggleNavigation = () => {
-		if (openNavigation){
+		if (openNavigation) {
 			setOpenNavigation(false);
 			// enablePageScroll()
 		} else {
@@ -25,9 +24,9 @@ const Navbar = () => {
 
 	const handleClick = () => {
 		// if(!openNavigation) return;
-		// enablePageScroll();	
-		setOpenNavigation(false)
-	}
+		// enablePageScroll();
+		setOpenNavigation(false);
+	};
 
 	return (
 		<div
@@ -36,7 +35,10 @@ const Navbar = () => {
 			}`}
 		>
 			<div className="flex items-center justify-center px-5 lg:px-7.5 xl:px-10 max-lg:py-4">
-				<Link href={"/#"} className="block w-[12rem] xl:mr-8 text-3xl font-bold">
+				<Link
+					href={"/#"}
+					className="block w-[12rem] xl:mr-8 text-3xl font-bold"
+				>
 					FILTERATE
 				</Link>
 
@@ -58,9 +60,8 @@ const Navbar = () => {
 								{item.title}
 							</Link>
 						))}
-
 					</div>
-						<HamburgerMenu />
+					<HamburgerMenu />
 				</nav>
 
 				<Link
@@ -76,8 +77,13 @@ const Navbar = () => {
 					Sign In
 				</Link>
 
-				<button className='button relative items-center justify-center ml-auto lg:hidden px-3 text-n-1' onClick={toggleNavigation}>
-					<span className="relative z-10"><MenuSvg openNavigation={openNavigation} /></span>
+				<button
+					className="button relative inline-flex text-n-1 px-3 lg:hidden ml-auto items-center justify-center h-11 transition-colors hover:text-color-1"
+					onClick={toggleNavigation}
+				>
+					<span className="relative z-10">
+						<MenuSvg openNavigation={openNavigation} />
+					</span>
 				</button>
 			</div>
 		</div>

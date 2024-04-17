@@ -8,22 +8,22 @@ const MenuSvg: React.FC<MenuSvgProps> = ({ openNavigation }) => {
       className="overflow-visible"
       width="20"
       height="12"
-      viewBox="0 0 20 12"
     >
       <rect
         className="transition-all origin-center"
-        y={openNavigation ? "5" : "0"}
-        width="20"
-        height="3"
+        y='0'
+        width="30"
+        height="2"
         rx="1"
         fill="white"
         transform={`rotate(${openNavigation ? "45" : "0"})`}
       />
       <rect
         className="transition-all origin-center"
-        y={openNavigation ? "5" : "10"}
-        width="20"
-        height="3"
+        y='6'
+        x={openNavigation ? '-10' : '10'}
+        width="30"
+        height="2"
         rx="1"
         fill="white"
         transform={`rotate(${openNavigation ? "-45" : "0"})`}
