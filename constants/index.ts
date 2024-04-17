@@ -45,17 +45,17 @@ import {
     {
       id: "1",
       title: "Dashboard",
-      url: "#pricing",
+      url: "#dashboard",
     },
     {
       id: "2",
       title: "JOBPOST",
-      url: "#how-to-use",
+      url: "#jobs",
     },
     {
       id: "3",
       title: "Search",
-      url: "#roadmap",
+      url: "#search",
     },
     {
       id: "4",

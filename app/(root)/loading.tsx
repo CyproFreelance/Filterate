@@ -5,11 +5,11 @@ const loading = () => {
   return (
     <div className='flex items-center justify-center w-full h-screen overflow-hidden bg-n-8'>
       <Image
-      src='/assets/loading-01.svg'
+      src='/assets/loading.png'
       alt=''
       width={50}
       height={50}
-      className='animate-spin'
+      className='motion-safe:animate-spin'
       />
     </div>
   )
