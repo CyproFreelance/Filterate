@@ -68,8 +68,6 @@ const SignupForm = () => {
 			if (res.ok) {
 				form.reset();
 				console.log(values);
-				const router = useRouter();
-				router.push("/onboarding");
 			} else {
 				console.log("User Registration failed");
 			}
