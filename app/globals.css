@@ -269,6 +269,7 @@ main {
   width: 700px;
   height: 450px;
   display: flex;
+  align-items: center;
 }
 
 .images .image {
