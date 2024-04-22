@@ -1,13 +1,18 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import connect_db from "./db";
+import { AnswerProvider } from "./(root)/onboarding/context/AnswerContext";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Filtrate",
-  description: "This is an sexy freelancing website for video editing and clients",
+  description:
+    "This is an sexy freelancing website for video editing and clients",
 };
+
+connect_db();
 
 export default function RootLayout({
   children,
@@ -16,7 +21,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <AnswerProvider>{children}</AnswerProvider>
+      </body>
     </html>
   );
 }
