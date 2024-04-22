@@ -3,7 +3,7 @@ import Users from "@/models/users";
 import { NextApiRequest  }  from "next";
 import { NextResponse } from "next/server";
 
-export async function POST(req: NextApiRequest) {
+export async function POST(req: Request) {
     try {
         const value = await req.json();
         // console.log(value);
