@@ -59,7 +59,7 @@ const Hero = () => {
                                 <Image
                                     src={robot}
                                     alt=""
-                                    className="w-full scale-[1.7] mt-10 translate-y-[8%] md:scale-[1] md:-translate-y-[10%] lg:-translate-y-[23%]"
+                                    className="w-full scale-[1.7] mt-10 translate-y-[8%] md:scale-[1.3] md:-translate-y-[10%] lg:-translate-y-[23%]"
                                     width={1024}
                                     height={490}
                                 />

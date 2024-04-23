@@ -17,12 +17,12 @@ import { SignupValidation } from "@/lib/validation";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
-import { useToast } from "@/components/ui/use-toast";
-import { useState } from "react";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { useEffect, useState } from "react";
 
 const SignupForm = () => {
-	const [toastText, SetToastText] = useState("");
-	const { toast } = useToast();
+	const [toastText, SetToastText] = useState('');
 	const form = useForm<z.infer<typeof SignupValidation>>({
 		resolver: zodResolver(SignupValidation),
 		defaultValues: {
@@ -32,6 +32,12 @@ const SignupForm = () => {
 			password: "",
 		},
 	});
+
+	useEffect(() => {
+		if (toastText) {
+		  toast.dark(toastText); // or toast.dark(toastText)
+		}
+	  }, [toastText]);
 
 	async function onSubmit(values: z.infer<typeof SignupValidation>) {
 		try {
@@ -49,13 +55,13 @@ const SignupForm = () => {
 
 			if (userExists) {
 				// should render toast saying the user that the username or email is already taken
-				SetToastText("Username or email is already taken");
-				toast({
-					title: toastText,
-				});
+				SetToastText('🔴Username already taken');
+				// toast.error(toastText);
 				console.log("User already exists");
 				return;
 			} else {
+				SetToastText('Done');
+				// toast.dark(toastText);
 				console.log("User does not exist");
 			}
 
@@ -87,7 +93,7 @@ const SignupForm = () => {
 				<Link href="/" className="text-xs font-sans text-blue-200 underline">
 					Go Back
 				</Link>
-
+				<ToastContainer/>
 				<form
 					onSubmit={form.handleSubmit(onSubmit)}
 					className="flex-col w-full mt-6"
@@ -170,12 +176,6 @@ const SignupForm = () => {
 						<button
 							type="submit"
 							className="bg-n-1 text-n-8 px-8 mt-3 py-2 rounded-md hover:bg-n-3 transition-all"
-							onClick={() => {
-								console.log("Successfull");
-								toast({
-									title: 'toastText',
-								});
-							}}
 						>
 							Submit
 						</button>

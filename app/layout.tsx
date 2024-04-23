@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import connect_db from "./db";
-import { AnswerProvider } from "./(root)/onboarding/context/AnswerContext";
+// import connect_db from "./db";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -12,7 +11,7 @@ export const metadata: Metadata = {
     "This is an sexy freelancing website for video editing and clients",
 };
 
-connect_db();
+// connect_db();
 
 export default function RootLayout({
   children,
@@ -22,7 +21,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <AnswerProvider>{children}</AnswerProvider>
+        {children}
       </body>
     </html>
   );
