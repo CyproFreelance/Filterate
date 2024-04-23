@@ -27,7 +27,7 @@ const BelowHero = () => {
               should contain is a signup/login not mandatory browsing is
               optional by pressing a skip button.
             </p>
-            <button className="border-none bg-[#ffcd0aff] text-n-8 uppercase py-4 px-10 rounded-full cursor-pointer transition-transform hover:scale-0.9">
+            <button className="border-none bg-[#ffcd0aff] text-n-8 uppercase py-4 px-10 rounded-full cursor-pointer transition-all hover:bg-[#f1db80]">
               View Examples
             </button>
           </div>

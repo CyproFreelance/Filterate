@@ -45,12 +45,12 @@ import {
     {
       id: "1",
       title: "Dashboard",
-      url: "#dashboard",
+      url: "/sign-in",
     },
     {
       id: "2",
       title: "JOBPOST",
-      url: "#jobs",
+      url: "/sign-in",
     },
     {
       id: "3",

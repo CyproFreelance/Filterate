@@ -21,8 +21,9 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useEffect, useState } from "react";
 
+
 const SignupForm = () => {
-	const [toastText, SetToastText] = useState('');
+	const [toastText, SetToastText] = useState("");
 	const form = useForm<z.infer<typeof SignupValidation>>({
 		resolver: zodResolver(SignupValidation),
 		defaultValues: {
@@ -35,33 +36,35 @@ const SignupForm = () => {
 
 	useEffect(() => {
 		if (toastText) {
-		  toast.dark(toastText); // or toast.dark(toastText)
+			toast.dark(toastText); // or toast.dark(toastText)
 		}
-	  }, [toastText]);
+	}, [toastText]);
 
 	async function onSubmit(values: z.infer<typeof SignupValidation>) {
 		try {
 			const username = values.username;
 			const email = values.email;
-			// it will send req to api and check if user exists
 			const resUserExist = await fetch("/api/UserExists", {
 				method: "POST",
 				body: JSON.stringify({ email, username }),
 				headers: { "Content-Type": "application/json" },
 			});
 
-			const { userExists } = await resUserExist.json();
+			const { userExists, emailExist, idExist } = await resUserExist.json();
 			console.log(userExists); // true or false
 
 			if (userExists) {
-				// should render toast saying the user that the username or email is already taken
-				SetToastText('🔴Username already taken');
-				// toast.error(toastText);
+				if (emailExist){
+					SetToastText("🔴Email already taken ");
+				} else if (idExist){
+					SetToastText("🔴Username already taken");
+				} else {
+					SetToastText("🔴Username or Email already taken");
+				}
 				console.log("User already exists");
 				return;
 			} else {
-				SetToastText('Done');
-				// toast.dark(toastText);
+				SetToastText("Done");
 				console.log("User does not exist");
 			}
 
@@ -86,17 +89,19 @@ const SignupForm = () => {
 		<Form {...form}>
 			<div className="sm:w-420 flex-center flex-col ">
 				<h1 className="text-2xl font-bold">FILTERATE</h1>
-				<h2 className="h3 md:h2-bold pt-5 sm:pt-12">Create a new account</h2>
+				<h2 className="h3 leading-tight md:h2-bold pt-5">
+					Create a new account
+				</h2>
 				<p className="text-gray-300 font-grotesk small-medium md:base-regular mt-12">
 					To use Filterate Enter your Details
 				</p>
 				<Link href="/" className="text-xs font-sans text-blue-200 underline">
 					Go Back
 				</Link>
-				<ToastContainer/>
+				<ToastContainer />
 				<form
 					onSubmit={form.handleSubmit(onSubmit)}
-					className="flex-col w-full mt-6"
+					className="flex-col w-full mt-6 space-y-1"
 				>
 					<FormField
 						control={form.control}
@@ -204,10 +209,10 @@ const AuthLayout = () => {
 
 				<Image
 					width={500}
-					height={1000}
+					height={900}
 					src="/assets/images/side-img.svg"
 					alt=""
-					className="hidden xl:block h-screen w-1/2 object-cover bg-no-repeat"
+					className="hidden lg:block h-screen w-1/2 object-cover bg-no-repeat"
 				/>
 			</div>
 		</>
