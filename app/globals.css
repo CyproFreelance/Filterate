@@ -96,175 +96,90 @@
   @apply rotate-[-360deg];
 }
 
-/* 
-main {
-  display: -ms-flexbox;
-  display: flex;
-  justify-content: space-between;
-  height: calc(100vh - 5rem);
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  padding: 0 3.125rem;
+
+@layer utilities{
+  .root {
+    @apply flex min-h-screen w-full flex-col bg-n-8 lg:flex-row;
+  }
+  
+  .root-container {
+    @apply mt-16 flex-1 overflow-auto py-8 lg:mt-0 lg:max-h-screen lg:py-10
+  }
+  
+
+  .p-16-semibold {
+    @apply font-semibold text-[16px] leading-[140%];
+  }
+  .flex-center {
+    @apply flex justify-center items-center;
+  }
+
+  .flex-between {
+    @apply flex justify-between items-center;
+  }
+
+    /* Search Component */
+    .search {
+      @apply flex w-full rounded-[16px] border-2 border-purple-200/20 bg-white px-4 shadow-sm md:max-w-96;
+    }
+  
+    /* Sidebar Component */
+    .sidebar {
+      @apply hidden h-screen w-72 bg-n-6 p-5 shadow-md shadow-purple-200/50 lg:flex;
+    }
+  
+    .sidebar-logo {
+      @apply flex items-center gap-2 md:py-2;
+    }
+  
+    .sidebar-nav {
+      @apply h-full flex-col justify-between md:flex md:gap-4;
+    }
+  
+    .sidebar-nav_elements {
+      @apply hidden w-full flex-col items-start gap-2 md:flex;
+    }
+  
+    .sidebar-nav_element {
+      @apply flex-center p-16-semibold w-full whitespace-nowrap rounded-full bg-cover  transition-all hover:bg-white/20 hover:shadow-inner;
+    }
+  
+    .sidebar-link {
+      @apply p-16-semibold flex size-full gap-4 p-4;
+    }
+
+    .dropdown-content {
+      @apply shadow-lg rounded-md overflow-hidden p-0;
+    }
+  
+    .dropdown-item {
+      @apply p-16-semibold text-dark-700 cursor-pointer transition-all px-4 py-3 rounded-none outline-none hover:border-none focus-visible:ring-transparent hover:text-white hover:bg-purple-gradient hover:bg-cover focus-visible:ring-offset-0 focus-visible:outline-none !important;
+    }
+  
+    .input-field {
+      @apply rounded-[16px] border-2 border-purple-200/20 shadow-sm shadow-purple-200/15 text-dark-600 disabled:opacity-100 p-16-semibold h-[50px] md:h-[54px] focus-visible:ring-offset-0 px-4 py-3 focus-visible:ring-transparent !important;
+    }
+  
+    .search-field {
+      @apply border-0 bg-transparent text-dark-600 w-full placeholder:text-dark-400 h-[50px] p-16-medium focus-visible:ring-offset-0 p-3 focus-visible:ring-transparent !important;
+    }
+    .sheet-content button {
+      @apply focus:ring-0 focus-visible:ring-transparent focus:ring-offset-0 focus-visible:ring-offset-0 focus-visible:outline-none focus-visible:border-none !important;
+    }
+    .header {
+      @apply flex-between fixed h-16 w-full border-b border-zinc-900 bg-n-6 p-5 lg:hidden;
+    }
+  
+    .header-nav_elements {
+      @apply mt-8 flex w-full flex-col items-start gap-5;
+    }
+  
+    /* Search Component */
+    .search {
+      @apply flex w-full rounded-[16px] border-2 border-purple-200/20 bg-white px-4 shadow-sm shadow-purple-200/15 md:max-w-96;
+    }
+    
 }
-
-.wrapper {
-  overflow: hidden;
-}
-
-.absolute-wrapper {
-  position: absolute;
-  overflow: hidden;
-  height: 100vh;
-  width: 60%;
-  top: 0;
-  left: 0;
-  z-index: -1;
-}
-
-.colored-backgrounds {
-  position: absolute;
-  height: inherit;
-  width: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.colored-backgrounds div {
-  width: 100%;
-  height: 100%;
-  -webkit-box-flex: 1;
-  -ms-flex-positive: 1;
-  flex-grow: 1;
-  -ms-flex-negative: 0;
-  flex-shrink: 0;
-}
-
-.colored-backgrounds div:nth-child(1) {
-  background-color: #d1d0c4;
-}
-
-.colored-backgrounds div:nth-child(2) {
-  background-color: #adc1a8;
-}
-
-.colored-backgrounds div:nth-child(3) {
-  background-color: #d3d8d6;
-}
-
-.colored-backgrounds div:nth-child(4) {
-  background-color: #d3ae99;
-}
-
-.content h1 {
-  margin-bottom: 1rem;
-  font-size: 3.5rem;
-}
-
-.content p {
-  margin-bottom: 1.5rem;
-  font-family: open sans;
-}
-
-.content button {
-  border: none;
-  background-color: #7bcc3c;
-  text-transform: uppercase;
-  letter-spacing: 3px;
-  padding: 1rem 2.5rem;
-  cursor: pointer;
-}
-
-.content button:active {
-  -webkit-transform: scale(0.96);
-  transform: scale(0.96);
-}
-
-.images {
-  width: 350px;
-  height: 500px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.images .image {
-  height: 100%;
-  width: 100%;
-  -webkit-box-flex: 1;
-  -ms-flex-positive: 1;
-  flex-grow: 1;
-  -ms-flex-negative: 0;
-  flex-shrink: 0;
-}
-
-.image:nth-child(1) {
-  background: url("https://vikram-hegde.github.io/ui-animation/images/image1.png")
-    no-repeat 50% 50% / cover;
-}
-
-.image:nth-child(2) {
-  background: url("https://vikram-hegde.github.io/ui-animation/images/image2.png")
-    no-repeat 50% 50% / cover;
-}
-
-.image:nth-child(3) {
-  background: url("https://vikram-hegde.github.io/ui-animation/images/image3.png")
-    no-repeat 50% 50% / cover;
-}
-
-.image:nth-child(4) {
-  background: url("https://vikram-hegde.github.io/ui-animation/images/image4.png")
-    no-repeat 50% 50% / cover;
-}
-
-.navigation .right,
-.navigation .left {
-  height: 60px;
-  width: 60px;
-  border: 1px solid #333;
-  border-radius: 50%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  margin-top: 1rem;
-  cursor: pointer;
-}
-
-.navigation .right:hover,
-.navigation .left:hover {
-  background-color: #333;
-  color: white;
-}
-
-.navigation .right:active,
-.navigation .left:active {
-  -webkit-transform: scale(0.96);
-  transform: scale(0.96);
-}
-
-.images,
-.colored-backgrounds {
-  -webkit-transition: -webkit-transform 0.35s
-    cubic-bezier(0.39, 0.575, 0.565, 1);
-  transition: -webkit-transform 0.35s cubic-bezier(0.39, 0.575, 0.565, 1);
-  transition: transform 0.35s cubic-bezier(0.39, 0.575, 0.565, 1);
-  transition: transform 0.35s cubic-bezier(0.39, 0.575, 0.565, 1),
-    -webkit-transform 0.35s cubic-bezier(0.39, 0.575, 0.565, 1);
-}
-
-.colored-backgrounds {
-  -webkit-transition-delay: 150ms;
-  transition-delay: 150ms;
-} */
-
 .images {
   width: 700px;
   height: 450px;
@@ -289,3 +204,25 @@ main {
 .navigation {
   transition-delay: 100ms;
 }
+
+.cl-userButtonBox {
+  display: flex;
+  gap: 12px;
+}
+/* .cl-avatarImage{
+  width: 80px;
+} */
+
+.cl-internal-1j7ahlv{
+  width: 3rem;
+  height: 3rem;
+}
+
+
+.cl-userButtonOuterIdentifier {
+  font-family: 'Sora' sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: #ffffff;
+}
+

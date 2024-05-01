@@ -36,6 +36,50 @@ import {
     yourlogo,
   } from "@/public/assets";
   
+  export const navLinks = [
+    {
+      label: "Home",
+      route: "/",
+      icon: "/assets/icons/home.svg",
+    },
+    {
+      label: "Account Dashboard",
+      route: "/",
+      icon: "/assets/icons/image.svg",
+    },
+    {
+      label: "Transaction",
+      route: "/",
+      icon: "/assets/icons/stars.svg",
+    },
+    {
+      label: "Profits",
+      route: "/",
+      icon: "/assets/icons/scan.svg",
+    },
+    {
+      label: "History",
+      route: "/",
+      icon: "/assets/icons/filter.svg",
+    },
+    {
+      label: "Connections",
+      route: "/",
+      icon: "/assets/icons/camera.svg",
+    },
+    {
+      label: "Profile",
+      route: "/profile",
+      icon: "/assets/icons/profile.svg",
+    },
+    // {
+    //   label: "Buy Credits",
+    //   route: "/",
+    //   icon: "/assets/icons/bag.svg",
+    // },
+  ];
+  
+
   export const navigation = [
     {
       id: "0",

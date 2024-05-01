@@ -4,6 +4,7 @@ import { navigation } from "@/constants";
 import { HamburgerMenu } from "../design/Header";
 import MenuSvg from "@/public/assets/svg/MenuSvg";
 import { useState } from "react";
+import { SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
 
 // Task remaining :
 // 1) Page Scroll Disable when Navbar open
@@ -63,19 +64,24 @@ const Navbar = () => {
 					</div>
 					<HamburgerMenu />
 				</nav>
-
+			
+			<SignedIn>
+				<UserButton showName />
+			</SignedIn >
+			<SignedOut>
 				<Link
 					href="/sign-up"
 					className="button font-sans text-sm hidden mr-8 text-n-1/50 transition-colors hover:text-n-1 lg:block"
-				>
+					>
 					Sign Up
 				</Link>
 				<Link
 					href="/sign-in"
 					className="button transition-all text-n-8 hover:bg-[#e0ab42] rounded-md hidden lg:flex bg-[#ffcd0aff] px-7 py-3"
-				>
+					>
 					Sign In
 				</Link>
+			</SignedOut>				
 
 				<button
 					className="button relative inline-flex text-n-1 px-3 lg:hidden ml-auto items-center justify-center h-11 transition-colors hover:text-color-1"
