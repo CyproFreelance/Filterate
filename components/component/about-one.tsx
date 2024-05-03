@@ -5,6 +5,7 @@ import Image from "next/image";
 
 export function AboutOne() {
   return (
+    <>
     <div className="flex flex-col min-h-[100dvh]">
       <main className="flex-1">
         <section className="w-full py-12 md:py-24 lg:py-32">
@@ -221,6 +222,8 @@ export function AboutOne() {
         </nav>
       </footer>
     </div>
+    </>
+
   )
 }
 
