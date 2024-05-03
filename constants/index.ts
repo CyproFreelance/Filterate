@@ -44,7 +44,7 @@ import {
     },
     {
       label: "Account Dashboard",
-      route: "/",
+      route: "/dashboard",
       icon: "/assets/icons/image.svg",
     },
     {

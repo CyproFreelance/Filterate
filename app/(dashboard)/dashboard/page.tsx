@@ -1,14 +1,11 @@
-import UserInfo from '@/components/dashboard/userinfo'
-import Sidebar from '@/components/shared/Sidebar'
-import MobileNav from '@/components/shared/MobileNav'
-import React from 'react'
+import { UserDashboard } from '@/components/component/user-dashboard'
 
 
 const Dashboard = () => {
 
   return (
     <div className='flex'>
-      Hi
+      <UserDashboard/>
     </div>
   )
 }
