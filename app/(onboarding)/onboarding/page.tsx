@@ -1,14 +1,14 @@
 'use client'
 import React, { useContext } from "react";
 import Section from "@/components/widgets/Section";
-import OptionGroup from "@/components/onboardingPage/OptionGroup";
-import { AnswerContext } from "@/components/onboardingPage/AnswerContext";
+// import OptionGroup from "@/components/onboardingPage/OptionGroup";
+// import { AnswerContext } from "@/components/onboardingPage/AnswerContext";
 
 const OnboardingPage = () => {
-    const roleQuestion = ["Are you a Client or Freelancer?"];
-    const { pointer, changeCurrentPointer } = useContext(AnswerContext);
+    // const roleQuestion = ["Are you a Client or Freelancer?"];
+    // const { pointer, changeCurrentPointer } = useContext(AnswerContext);
 
-    const type = [];
+    // const type = [];
     return (
             <Section
                 className={`pt-[12rem] -mt-[5.25rem] overflow-hidden`}
