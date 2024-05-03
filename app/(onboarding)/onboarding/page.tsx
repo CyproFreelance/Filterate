@@ -22,7 +22,7 @@ const OnboardingPage = () => {
                 </div>
             
 
-            {pointer === 0 && (
+            {/* {pointer === 0 && (
                 <OptionGroup
                     childrenArray={[
                         "Client",
@@ -33,7 +33,7 @@ const OnboardingPage = () => {
                     defaultText="Other"
                     free={false}
                 ></OptionGroup>
-            )}
+            )} */}
             </div>
         </Section>
     );
