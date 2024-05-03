@@ -85,7 +85,7 @@ export function AboutOne() {
                   </div>
                 </div>
               </div>
-              <img
+              <Image
                 alt="Services"
                 className="mx-auto aspect-square overflow-hidden rounded-xl object-cover object-center sm:w-full"
                 height={550}
@@ -98,7 +98,7 @@ export function AboutOne() {
         <section className="w-full py-12 md:py-24 lg:py-32 ">
           <div className="container px-4 md:px-6">
             <div className="grid items-center gap-6 lg:grid-cols-2 lg:gap-12">
-              <img
+              <Image
                 alt="Team"
                 className="mx-auto aspect-square overflow-hidden rounded-xl object-cover object-center sm:w-full"
                 height={550}
@@ -147,12 +147,12 @@ export function AboutOne() {
                   Hear What Our Clients Say
                 </h2>
                 <p className="max-w-[600px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
-                  Our clients love working with us and we're proud to share their kind words.
+                  Our clients love working with us and we&lsquo;re proud to share their kind words.
                 </p>
                 <div className="grid gap-4">
                   <div className="rounded-lg border border-gray-200 bg-white p-4 shadow-sm dark:border-gray-700 dark:bg-gray-950">
                     <div className="flex items-start">
-                      <img
+                      <Image
                         alt="Client"
                         className="h-12 w-12 rounded-full"
                         height={48}
@@ -169,13 +169,13 @@ export function AboutOne() {
                       </div>
                     </div>
                     <p className="mt-4 text-gray-500 dark:text-gray-400 text-lg">
-                      "The team at Acme Agency has been an absolute pleasure to work with. They truly understand our
-                      brand and have delivered exceptional results."
+                    &quot;The team at Acme Agency has been an absolute pleasure to work with. They truly understand our
+                      brand and have delivered exceptional results.&quot;
                     </p>
                   </div>
                   <div className="rounded-lg border border-gray-200 bg-white p-4 shadow-sm dark:border-gray-700 dark:bg-gray-950">
                     <div className="flex items-start">
-                      <img
+                      <Image
                         alt="Client"
                         className="h-12 w-12 rounded-full"
                         height={48}
@@ -192,13 +192,13 @@ export function AboutOne() {
                       </div>
                     </div>
                     <p className="mt-4 text-gray-500 dark:text-gray-400 text-lg">
-                      "Acme Agency has been a true partner in helping us achieve our digital marketing goals. Their team
-                      is knowledgeable, responsive, and always goes the extra mile."
+                    &quot;Acme Agency has been a true partner in helping us achieve our digital marketing goals. Their team
+                      is knowledgeable, responsive, and always goes the extra mile.&quot;
                     </p>
                   </div>
                 </div>
               </div>
-              <img
+              <Image
                 alt="Testimonials"
                 className="mx-auto aspect-square overflow-hidden rounded-xl object-cover object-center sm:w-full"
                 height={550}
