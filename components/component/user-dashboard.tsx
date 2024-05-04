@@ -29,7 +29,7 @@ export function UserDashboard() {
             <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8 lg:p-10">
               <div className="flex items-end gap-4">
                 <div className="relative h-24 w-24 md:h-32 md:w-32 lg:h-40 lg:w-40">
-                  <Image width={150} height={150} alt="" className="rounded-full object-cover" src={user?.imageUrl} />
+                  <Image width={150} height={150} alt="" className="rounded-full object-cover" src={user?.imageUrl ?? '/placeholder.svg'} />
                   <Button
                     className="absolute -right-2 -bottom-2 md:-right-3 md:-bottom-3 lg:-right-4 lg:-bottom-4 rounded-full border border-gray-200 bg-white/80 dark:border-gray-800 dark:bg-gray-950/80"
                     size="icon"
