@@ -10,20 +10,21 @@ const OnboardingPage = () => {
 
     // const type = [];
     return (
+        <>
             <Section
                 className={`pt-[12rem] -mt-[5.25rem] overflow-hidden`}
                 crossesOffset={`lg:translate-y-[5.25rem]`}
                 customPaddings
                 id="onboarding"
-            >
+                >
             <div className="container-fluid-main mt-10 mx-auto w-fit text-center">
                 <div className="onboarding-brand">
                     <h1 className="block  text-3xl font-bold">FILTRATE</h1>
                 </div>
             
 
-            {/* {pointer === 0 && (
-                <OptionGroup
+                {/* {pointer === 0 && (
+                    <OptionGroup
                     childrenArray={[
                         "Client",
                         "Freelancer"
@@ -32,10 +33,11 @@ const OnboardingPage = () => {
                     question={roleQuestion[1]}
                     defaultText="Other"
                     free={false}
-                ></OptionGroup>
-            )} */}
-            </div>
-        </Section>
+                    ></OptionGroup>
+                )} */}
+                </div>
+            </Section>
+        </>
     );
 };
 
